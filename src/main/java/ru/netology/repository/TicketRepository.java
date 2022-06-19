@@ -67,7 +67,6 @@ public class TicketRepository {
     }
 
 
-
     public TicketData[] findById(int id) {
 
         TicketData[] tmp = new TicketData[tickets.length];

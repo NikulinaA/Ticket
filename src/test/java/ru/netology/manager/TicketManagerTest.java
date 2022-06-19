@@ -48,7 +48,7 @@ public class TicketManagerTest {
 
 
         TicketData[] actual = ticket.findAll("svo", "kzn");
-        TicketData[] expected = {ticket1,ticket4,ticket5,ticket7,ticket10,ticket13};
+        TicketData[] expected = {ticket1, ticket4, ticket5, ticket7, ticket10, ticket13};
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -75,10 +75,11 @@ public class TicketManagerTest {
         Arrays.sort(sor);
         TicketData[] actual = sor;
 
-        TicketData[] expected = {ticket10,ticket5,ticket1,ticket4,ticket7,ticket13};
+        TicketData[] expected = {ticket10, ticket5, ticket1, ticket4, ticket7, ticket13};
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void AddNoTicket() {
@@ -93,6 +94,7 @@ public class TicketManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void RemoveNoIdTicketSort() {
@@ -116,8 +118,9 @@ public class TicketManagerTest {
         TicketData[] actual = sor;
 
 
-
-        assertThrows(NotFoundException .class, () -> {ticket.removeById(547);});
+        assertThrows(NotFoundException.class, () -> {
+            ticket.removeById(547);
+        });
     }
 
     @Test
@@ -144,7 +147,7 @@ public class TicketManagerTest {
         Arrays.sort(sor);
         TicketData[] actual = sor;
 
-        TicketData[] expected = {ticket10,ticket5,ticket1,ticket7,ticket13};
+        TicketData[] expected = {ticket10, ticket5, ticket1, ticket7, ticket13};
 
         Assertions.assertArrayEquals(expected, actual);
 
