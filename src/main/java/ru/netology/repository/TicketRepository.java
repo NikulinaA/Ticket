@@ -30,8 +30,8 @@ public class TicketRepository {
         TicketData[] tmp = new TicketData[tickets.length];
         int index = 0;
         for (TicketData ticket : tickets) {
-            if (ticket.getAirportFrom() == from) {
-                if (ticket.getAirportTo() == to) {
+            if (ticket.getAirportFrom().equals(from)) {
+                if (ticket.getAirportTo().equals(to)) {
                     tmp[index] = ticket;
                     index++;
                 }

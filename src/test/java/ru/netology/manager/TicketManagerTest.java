@@ -29,7 +29,7 @@ public class TicketManagerTest {
 
     @Test
 
-    public void AddTicket() {
+    public void AddTicketSort() {
         TicketManager ticket = new TicketManager(new TicketRepository());
 
         ticket.add(ticket1);
@@ -48,32 +48,6 @@ public class TicketManagerTest {
 
 
         TicketData[] actual = ticket.findAll("svo", "kzn");
-        TicketData[] expected = {ticket1, ticket4, ticket5, ticket7, ticket10, ticket13};
-
-        Assertions.assertArrayEquals(expected, actual);
-    }
-
-    @Test
-
-    public void AddTicketSort() {
-        TicketManager ticket = new TicketManager(new TicketRepository());
-
-        ticket.add(ticket1);
-        ticket.add(ticket2);
-        ticket.add(ticket3);
-        ticket.add(ticket4);
-        ticket.add(ticket5);
-        ticket.add(ticket6);
-        ticket.add(ticket7);
-        ticket.add(ticket8);
-        ticket.add(ticket9);
-        ticket.add(ticket10);
-        ticket.add(ticket11);
-        ticket.add(ticket12);
-        ticket.add(ticket13);
-        TicketData[] sor = ticket.findAll("svo", "kzn");
-        Arrays.sort(sor);
-        TicketData[] actual = sor;
 
         TicketData[] expected = {ticket10, ticket5, ticket1, ticket4, ticket7, ticket13};
 
@@ -113,10 +87,6 @@ public class TicketManagerTest {
         ticket.add(ticket11);
         ticket.add(ticket12);
         ticket.add(ticket13);
-        TicketData[] sor = ticket.findAll("svo", "kzn");
-        Arrays.sort(sor);
-        TicketData[] actual = sor;
-
 
         assertThrows(NotFoundException.class, () -> {
             ticket.removeById(547);
@@ -143,9 +113,7 @@ public class TicketManagerTest {
         ticket.add(ticket13);
 
         ticket.removeById(4);
-        TicketData[] sor = ticket.findAll("svo", "kzn");
-        Arrays.sort(sor);
-        TicketData[] actual = sor;
+        TicketData[] actual = ticket.findAll("svo", "kzn");
 
         TicketData[] expected = {ticket10, ticket5, ticket1, ticket7, ticket13};
 
